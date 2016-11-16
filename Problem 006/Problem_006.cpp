@@ -1,8 +1,4 @@
-/*  Problem 6: Difference between sum of squares and square of sum
- *
- */
- 
- #include <iostream>
+#include <iostream>
 #include <cmath>
 
 long sumSquares(int n);

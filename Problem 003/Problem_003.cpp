@@ -1,7 +1,3 @@
-/* Problem 3: Finding largest prime factor
- *
- */
- 
 #include <iostream>
 #include <cmath>
 

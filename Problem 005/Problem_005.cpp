@@ -1,7 +1,3 @@
-/* Problem 4: Finding Smallest Multiple
- *
- */
-
 #include <iostream>
 
 int evenlyDivides(int first, int last);

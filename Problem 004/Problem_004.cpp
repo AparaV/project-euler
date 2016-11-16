@@ -1,8 +1,4 @@
-/* Problem 4: Finding the Largest Palindrome Product
- *
- */
- 
- #include <iostream>
+#include <iostream>
 #include <cmath>
 #include <algorithm>
 
@@ -46,7 +42,7 @@ long largestProdPalindrome(int maxDigits){
     for(firstNum = upperLimit; firstNum >= lowerLimit; firstNum--){
         for(secondNum = firstNum; secondNum >= lowerLimit; secondNum--){
             product = firstNum * secondNum;
-            if (isPalindrome(product)){
+            if (isPalindrome(product) == true){
                 maxProduct = std::max(product, maxProduct);
             }
         }

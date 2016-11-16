@@ -1,7 +1,3 @@
-/** Problem 8: Finding the largest product in a series
- **
- */
-
 #include <iostream>
 #include <algorithm>
 

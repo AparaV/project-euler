@@ -1,12 +1,8 @@
-/* Problem 2: Sum of Even Fibonacci Numbers
- *
- */
 #include <iostream>
 
 int fibonacci(int n);//Prototype for n-th Fibonacci number
 int fibonacciEvenSum(int upperLimit);//Prototype for finding sum
 
-//Program begins
 int main(){
 
     std::cout << fibonacciEvenSum(4000000) << std::endl;
