@@ -1,6 +1,7 @@
 #Python
 *.py#
 *.pyc
+*.py~
 
 #C++
 *.o
