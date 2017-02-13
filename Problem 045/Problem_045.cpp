@@ -24,7 +24,8 @@ int64_t answer() {
 
 	for (int i = 1; notFound; ++i) {
 		int64_t n = i*(2 * i - 1);
-		if (isTriangular(n) && isPentagonal(n)) {
+		//All triangular numbers are also hexagonal
+		if (isPentagonal(n)) {
 			if (n > 40755) {
 				notFound = false;
 			}
