@@ -3,29 +3,26 @@
  */
 
 #include <iostream>
-#include <map>
 #include <cmath>
 #include <ctime>
 
 using namespace std;
 
-map<int, int> primeFactorization(int n) {
-	map<int, int> factors;
-	int size = sqrt(n) + 1;
+int64_t numberOfPrimeFactors(int64_t n) {
+	int64_t factors = 0;
 
-	for (int i = 2; i <= size; ++i) {
+	for (int64_t i = 2; i <= sqrt(n) + 1; ++i) {
 		if (n % i == 0) {
-			factors[i] = 1;
+			factors++;
 			n /= i;
 			while (n % i == 0) {
-				factors[i]++;
 				n /= i;
 			}
 		}
 	}
 
 	if (n > 2) {
-		factors[n] = 1;
+		factors++;
 	}
 
 	return factors;
@@ -37,10 +34,10 @@ int answer() {
 
 	for (int i = 2; notFound; ++i) {
 		int temp = i;
-		map<int, int> factors = primeFactorization(temp);
-		while (factors.size() == 4 && temp < 4 + i) {
+		int factors = numberOfPrimeFactors(temp);
+		while (factors == 4 && temp < 4 + i) {
 			temp++;
-			factors = primeFactorization(temp);
+			factors = numberOfPrimeFactors(temp);
 		}
 		if (temp == 4 + i) {
 			n = i;
