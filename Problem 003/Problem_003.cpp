@@ -4,6 +4,9 @@
 
 #include <iostream>
 #include <cmath>
+#include <ctime>
+
+using namespace std;
 
 int64_t largestPrimeFactor(int64_t num) {
 	int64_t largestFactor = 0;
@@ -22,9 +25,19 @@ int64_t largestPrimeFactor(int64_t num) {
 	return largestFactor;
 }
 
+int64_t answer() {
+	return largestPrimeFactor(600851475143);
+}
+
 int main(){
 
-    std::cout << largestPrimeFactor(600851475143) << std::endl;
+	clock_t start = clock();
+	int64_t solution = answer();
+	clock_t end = clock();
+	double time = static_cast<double>((end - start) / CLOCKS_PER_SEC * 1000.0);
+
+	cout << "Answer is " << solution << endl;
+	cout << "It took " << time << " milliseconds" << endl;
 
     return 0;
 }
