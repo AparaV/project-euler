@@ -1,8 +1,26 @@
+/** Problem 003: Largest Prime Factor
+ ** Author: Aparajithan Venkateswaran
+ */
+
 #include <iostream>
 #include <cmath>
 
+int64_t largestPrimeFactor(int64_t num) {
+	int64_t largestFactor = 0;
+	int64_t sqrtNum = sqrt(num) + 1;
 
-long long largestPrimeFactor(long long num);
+	for (int64_t i = 2; i < sqrtNum; ++i) {
+		if (num % i == 0) {
+			largestFactor = i;
+			num /= i;
+			while (num %i == 0) {
+				num /= i;
+			}
+		}
+	}
+
+	return largestFactor;
+}
 
 int main(){
 
@@ -11,15 +29,4 @@ int main(){
     return 0;
 }
 
-long long largestPrimeFactor(long long num){
-    long long divisor = 2;
 
-    while (divisor < sqrt(num)){
-        while( num % divisor == 0){
-            num /= divisor;
-        }
-        ++divisor;
-    }
-
-    return num;
-}
