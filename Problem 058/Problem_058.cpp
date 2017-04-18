@@ -3,30 +3,23 @@
  */
 
 #include <iostream>
-#include <cstring>
 
 using namespace std;
 
-bool* primeSieve(int64_t size) {
-
-	bool* prime = new bool[size + 1];
-	memset(prime, true, size + 1);
-	prime[0] = false;
-	prime[1] = false;
-
-	for (int64_t p = 2; p*p <= size; p++) {
-		if (prime[p] == true) {
-			for (int64_t i = p * 2; i <= size; i += p) {
-				prime[i] = false;
-			}
+bool isPrime(int64_t n) {
+	if (n <= 1) {
+		return false;
+	}
+	for (int64_t i = 2; i * i <= n; ++i) {
+		if (n %i == 0) {
+			return false;
 		}
 	}
-	return prime;
+	return true;
 }
 
 int answer() {
 	int64_t size = 700000000;
-	bool* primes = primeSieve(size);
 	int* spiral = new int[size + 1];
 	for (int i = 0; i <= size; ++i) {
 		spiral[i] = i;
@@ -34,7 +27,7 @@ int answer() {
 	int totalPrimes = 0, current = 3, corner = 1, side = 2;
 
 	while (current <= size) {
-		if (primes[current]) {
+		if (isPrime(current)) {
 			totalPrimes++;
 		}
 		if (corner == 4) {
